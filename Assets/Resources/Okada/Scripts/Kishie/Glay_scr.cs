@@ -14,6 +14,7 @@ public class Glay_scr : MonoBehaviour {
 	bool zoom;
 	public GameObject GameClear;
 	public GameObject GameOver;
+    public GameObject endCanvas;
 
 	void Start () {
 		came = GameObject.Find ("Main Camera");
@@ -55,8 +56,8 @@ public class Glay_scr : MonoBehaviour {
 			Debug.Log ("再提出");
             GeikodoManager.isSuccess = false;
             GameOver.SetActive (true);
-		}
-        Invoke("LoadMainScene",3f);
+        }
+        Invoke("LoadMainScene",2f);
 	}
 
 	public void ZoomOut(){
@@ -67,6 +68,11 @@ public class Glay_scr : MonoBehaviour {
 	}
 
     public void LoadMainScene() {
+        Instantiate(endCanvas);
+        Invoke("Jikkou", 0.5f);
+    }
+
+    public void Jikkou() {
         SceneManager.LoadScene("Main");
     }
 }
