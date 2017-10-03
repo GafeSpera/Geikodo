@@ -28,6 +28,8 @@ public class GeikodoManager : MonoBehaviour {
         SceneManager.LoadScene(currentSceneNumber++);
     }
 
+
+	// うまく動かない
     public static void LoadMiddleScene() {
         Debug.Log("LoadMiddleScene called");
         GameObject uiObj = Resources.Load("Okada/Prefabs/SceneEndCanvas") as GameObject;
