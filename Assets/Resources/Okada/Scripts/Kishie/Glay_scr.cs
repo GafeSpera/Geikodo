@@ -17,6 +17,7 @@ public class Glay_scr : MonoBehaviour {
 	private float defaultCameraScale =  2.929865f;
 
 	void Start () {
+		GeikodoManager.isSuccess = false;
 		came = GameObject.Find ("Main Camera");
 		cs = came.GetComponent<Camera> ();
 		cs.orthographicSize = defaultCameraScale;
@@ -65,6 +66,7 @@ public class Glay_scr : MonoBehaviour {
 		if (x == -1) {
 			//Debug.Log ("ok");
 			GameClear.SetActive (true);//拡大されてから表示したい
+			GeikodoManager.isSuccess = true;
 		} else {
 			//Debug.Log ("再提出");
 			GameOver.SetActive (true);
