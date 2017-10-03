@@ -2,24 +2,24 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Glay_scr : MonoBehaviour {
 	
 	float x = 0;
 	int t ;
-	public float speed;
+	float speed = 2f;
 	private GameObject came = null;
 	private Camera cs;
 	bool zoom;
 	public GameObject GameClear;
 	public GameObject GameOver;
-    public GameObject endCanvas;
+	public float Level = 1f;
+	private float defaultCameraScale =  2.929865f;
 
 	void Start () {
 		came = GameObject.Find ("Main Camera");
 		cs = came.GetComponent<Camera> ();
-		cs.orthographicSize = 2.929865f;
+		cs.orthographicSize = defaultCameraScale;
 	}
 
 	void Update () {
@@ -33,46 +33,42 @@ public class Glay_scr : MonoBehaviour {
 		if(zoom){
 			ZoomOut ();
 		}
+
 	}
 
 	public void Move(){
 		Vector2 Move = new Vector2 (x,-0.22f);
 		this.transform.position = Move;
-		t++;
-		if(t >= 3){
-			x += speed ;
+		t ++;
+		if(t >= 8 - Level){
+			x += speed;
 			t = 0;
 		}
+
 	}
 
 	public void Stop(){
 		speed = 0;
 		zoom = true;
-		if (x == -1) {
-			Debug.Log ("合格");
-            GeikodoManager.isSuccess = true;
-		    GameClear.SetActive (true);//拡大されてから表示したい
-		} else {
-			Debug.Log ("再提出");
-            GeikodoManager.isSuccess = false;
-            GameOver.SetActive (true);
-        }
-        Invoke("LoadMainScene",2f);
+		Invoke ("DisplayRezult",0.5f);
 	}
 
 	public void ZoomOut(){
-		cs.orthographicSize += 0.1f;
-		if (cs.orthographicSize >= 6.00f) {
-			cs.orthographicSize = 6.00f;
+		cs.orthographicSize += 0.2f;
+		if (cs.orthographicSize >= 8.00f) {
+			cs.orthographicSize = 8.00f;
 		}
 	}
 
-    public void LoadMainScene() {
-        Instantiate(endCanvas);
-        Invoke("Jikkou", 0.5f);
-    }
+	public void DisplayRezult(){
 
-    public void Jikkou() {
-        SceneManager.LoadScene("Main");
-    }
+		if (x == -1) {
+			//Debug.Log ("ok");
+			GameClear.SetActive (true);//拡大されてから表示したい
+		} else {
+			//Debug.Log ("再提出");
+			GameOver.SetActive (true);
+		}
+	}
 }
+
