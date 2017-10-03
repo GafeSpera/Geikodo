@@ -34,3 +34,4 @@ ProjectVersion.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/.DS_Store
