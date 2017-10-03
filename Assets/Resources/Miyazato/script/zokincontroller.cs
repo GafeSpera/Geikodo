@@ -50,8 +50,8 @@ public class zokincontroller : MonoBehaviour {
 			star1.gameObject.SetActive (true);
 			star2.gameObject.SetActive (true);
 			GeikodoManager.isSuccess = true;
-			Invoke("LoadMainScene",2f);
 			if(fanfale){
+				Invoke("LoadMainScene",2f);
 				audioSource.PlayOneShot (audioClip[1]);
 				fanfale = false;
 			}
