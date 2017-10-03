@@ -16,6 +16,7 @@ public class zokincontroller : MonoBehaviour {
 	public GameObject uretan4;
 	public GameObject star1;
 	public GameObject star2;
+	public GameObject endCanvas;
 
 	// zokincount、isrightを初期化
 	//zokinのpositionを取得
@@ -48,6 +49,7 @@ public class zokincontroller : MonoBehaviour {
 			star1.gameObject.SetActive (true);
 			star2.gameObject.SetActive (true);
 			GeikodoManager.isSuccess = true;
+			Invoke("LoadMainScene",2f);
 			if(fanfale){
 				audioSource.PlayOneShot (audioClip[1]);
 				fanfale = false;
@@ -88,5 +90,14 @@ public class zokincontroller : MonoBehaviour {
 	//左が押されたマイナス
 	void IsLeft () {
 		isright -= 1;
+	}
+
+	public void LoadMainScene() {
+		Instantiate(endCanvas);
+		Invoke("Jikkou", 0.5f);
+	}
+
+	public void Jikkou() {
+		SceneManager.LoadScene("Main");
 	}
 }
