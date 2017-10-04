@@ -34,6 +34,9 @@ public class player_scr: MonoBehaviour {
 			Invoke ("Death",1f);
 			move = false;
 		}
+		if (collision.CompareTag ("Goal")) {
+			
+		}
 	}
 			
 
@@ -51,7 +54,7 @@ public class player_scr: MonoBehaviour {
 
 	public void Death (){
 		Debug.Log ("GameOver");
-		Destroy (gameObject);
+		//Destroy (gameObject);
 	}
 
 
