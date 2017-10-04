@@ -5,11 +5,12 @@ using UnityEngine;
 public class ClearJudge : MonoBehaviour {
 
 	public GameObject Line;
-	private bool clear;
+	public static bool clear;
 
 	// Use this for initialization
 	void Start () {
-		
+		GeikodoManager.isSuccess = false;
+		clear = false;
 	}
 	
 	// Update is called once per frame
@@ -19,7 +20,8 @@ public class ClearJudge : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.A) && LinePos.x >= -4.5 && LinePos.x <= -4) {
 			clear = true;
-			Debug.Log ("クリアー");
+			Debug.Log ("YEEEEEEE");
+			GeikodoManager.isSuccess = true;
 		}
 	}
 }
