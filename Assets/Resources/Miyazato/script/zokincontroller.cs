@@ -51,7 +51,6 @@ public class zokincontroller : MonoBehaviour {
 			star2.gameObject.SetActive (true);
 			GeikodoManager.isSuccess = true;
 			if(fanfale){
-				Invoke("LoadMainScene",2f);
 				audioSource.PlayOneShot (audioClip[1]);
 				fanfale = false;
 			}
@@ -91,14 +90,5 @@ public class zokincontroller : MonoBehaviour {
 	//左が押されたマイナス
 	void IsLeft () {
 		isright -= 1;
-	}
-
-	public void LoadMainScene() {
-		Instantiate(endCanvas);
-		Invoke("Jikkou", 0.5f);
-	}
-
-	public void Jikkou() {
-		SceneManager.LoadScene("Main");
 	}
 }
