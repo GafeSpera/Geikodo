@@ -29,9 +29,11 @@ public class player_scr: MonoBehaviour {
 		
 
 	void OnTriggerEnter2D (Collider2D collision){
-		move = false;
 		//zoom = true;
-		Invoke ("Death",2f);
+		if(collision.CompareTag("Fish")){
+			Invoke ("Death",1f);
+			move = false;
+		}
 	}
 			
 
@@ -48,13 +50,13 @@ public class player_scr: MonoBehaviour {
 
 
 	public void Death (){
-		
-		//Destroy (gameObject);
+		Debug.Log ("GameOver");
+		Destroy (gameObject);
 	}
 
 
 	public void ZoomIn(){
-		Debug.Log ("GameOver");
+		
 
 		//cs.orthographicSize -= 0.2f;
 //		if (cs.orthographicSize <= 2.0f) {
