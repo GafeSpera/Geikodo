@@ -29,16 +29,20 @@ public class timingdecision : MonoBehaviour {
 	void Update () {
 		time += Time.deltaTime;
 		Artistcontroller a1 = GetComponent<Artistcontroller> ();
+		MizunoADController m1 = GetComponent<MizunoADController> ();
 		if(time<=2 && Input.GetKeyDown(KeyCode.Space)){
 			Isbadclapping = true;
 			a1.OverChange ();
+			m1.GameOverSE ();
 		}
 		if (Isclapping1 == false && time >= 1) {
 			a1.ArtistChange1 ();
 			Isclapping1 = true;
+			m1.Clap ();
 		} else if (Isclapping2 == false && time >= 2) {
 			a1.ArtistChange2 ();
 			Isclapping2 = true;
+			m1.Clap ();
 		} else if (Isclapping3 == false && time >= 2.1f && Isbadclapping == false) {
 			//プレイヤーがボタンを押すまでの時間を計測
 			decisiontime += Time.deltaTime;
@@ -46,17 +50,21 @@ public class timingdecision : MonoBehaviour {
 			if (decisiontime <= 2 && Input.GetKeyDown(KeyCode.Space)) {
 				a1.PlayerChange ();
 				Isclapping3 = true;
+				m1.Clap ();
 				//decisiontimeを初期化
 				decisiontime = 0;
 			}else if(decisiontime >= 2){
 				a1.OverChange ();
+				m1.GameOverSE ();
 			}
 		} else if (Isclapping4 == false && time >= 4.1f) {
 			a1.ArtistChange3 ();
 			Isclapping4 = true;
+			m1.Clap ();
 		} else if (Isclapping5 == false && time >= 5) {
 			a1.ArtistChange4 ();
 			Isclapping5 = true;
+			m1.Clap ();
 		} else if (time >= 6) {
 			//プレイヤーが成功していたなら続く。失敗していたら終了
 			if (Isclapping3 == true) {
