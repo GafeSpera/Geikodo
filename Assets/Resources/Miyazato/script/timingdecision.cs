@@ -14,6 +14,7 @@ public class timingdecision : MonoBehaviour {
 	// Use this for initialization
 	//各変数を初期化
 	void Start () {
+		GeikodoManager.isSuccess=true;
 		time = 0;
 		decisiontime = 0;
 		Isclapping1 = false;
@@ -34,6 +35,7 @@ public class timingdecision : MonoBehaviour {
 			Isbadclapping = true;
 			a1.OverChange ();
 			m1.GameOverSE ();
+			GeikodoManager.isSuccess=false;
 		}
 		if (Isclapping1 == false && time >= 1) {
 			a1.ArtistChange1 ();
@@ -56,6 +58,7 @@ public class timingdecision : MonoBehaviour {
 			}else if(decisiontime >= 2){
 				a1.OverChange ();
 				m1.GameOverSE ();
+				GeikodoManager.isSuccess=false;
 			}
 		} else if (Isclapping4 == false && time >= 4.1f) {
 			a1.ArtistChange3 ();
