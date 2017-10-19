@@ -13,7 +13,7 @@ public class TextManager_scr : MonoBehaviour {
 	bool result = false;
 
 	void Start () {
-		//geikoudou ennjinn
+		GeikodoManager.isSuccess = false;
 	}
 
 
@@ -42,7 +42,7 @@ public class TextManager_scr : MonoBehaviour {
 	void Result(){
 		if (Point >= num_of_onnpu) {
 			GameCleare.SetActive (true);
-			//geikoudou ennjinn
+			GeikodoManager.isSuccess = true;
 		}else{
 			//GameOver.SetActive (true);
 		}
