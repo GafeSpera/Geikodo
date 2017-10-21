@@ -10,11 +10,10 @@ public class GeikodoManager : MonoBehaviour {
     public static int currentSceneNumber = 1;
     float loadNextSceneSec = 2.75f;
 
-	// Use this for initialization
 	void Start () {
         StartCoroutine(LoadNextScene());
         if (isSuccess) {
-            //score++; //do nothing
+            //do nothing
         }
         else {
             score--;
@@ -26,14 +25,5 @@ public class GeikodoManager : MonoBehaviour {
     private IEnumerator LoadNextScene() {
         yield return new WaitForSeconds(loadNextSceneSec);
         SceneManager.LoadScene(currentSceneNumber++);
-    }
-
-
-	// うまく動かない
-    public static void LoadMiddleScene() {
-        Debug.Log("LoadMiddleScene called");
-        GameObject uiObj = Resources.Load("Okada/Prefabs/SceneEndCanvas") as GameObject;
-        Debug.Log(uiObj);
-        Instantiate(uiObj, uiObj.transform);
     }
 }
