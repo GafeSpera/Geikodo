@@ -12,7 +12,7 @@ public class GameStart_scr : MonoBehaviour {
 
 	void Update () {
 		t++;
-		if(t>=60){
+		if(t>=40){
 			GameStart.SetActive (false);
 		}
 		
