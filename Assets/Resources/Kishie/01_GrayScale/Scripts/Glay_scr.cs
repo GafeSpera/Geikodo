@@ -23,6 +23,7 @@ public class Glay_scr : MonoBehaviour {
 		cs.orthographicSize = defaultCameraScale;
 	}
 
+
 	void Update () {
 		Move ();
 		if (this.transform.position.x >= 7) {
@@ -34,7 +35,6 @@ public class Glay_scr : MonoBehaviour {
 		if(zoom){
 			ZoomOut ();
 		}
-
 	}
 
 	public void Move(){
@@ -45,7 +45,6 @@ public class Glay_scr : MonoBehaviour {
 			x += speed;
 			t = 0;
 		}
-
 	}
 
 	public void Stop(){
@@ -62,7 +61,6 @@ public class Glay_scr : MonoBehaviour {
 	}
 
 	public void DisplayRezult(){
-
 		if (x == -1) {
 			//Debug.Log ("ok");
 			GameClear.SetActive (true);//拡大されてから表示したい

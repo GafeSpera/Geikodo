@@ -30,6 +30,4 @@ public class  Toonnkigou_scr : MonoBehaviour {
 		X += SpeedX;
 		this.transform.position = new Vector2 (X,Y);
 	}
-
-
 }
