@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StopLine : MonoBehaviour {
+public class RollingD : MonoBehaviour {
 
-
+	public GameObject D;
+	public static float Roll;
 
 	// Use this for initialization
 	void Start () {
-		
+		Roll = 15;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.Space)) {
-			MoveLine.a = 0;
-		}
+		D.transform.Rotate (new Vector3 (0, 0, Roll));
 	}
 }
