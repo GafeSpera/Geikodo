@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Onnpu_scr : MonoBehaviour {
 	
-
+	private AudioSource sound01;
 	void Start () {
-		
+		AudioSource[] audioSources = GetComponents<AudioSource>();
+		sound01 = audioSources[0];
 	}
 	
 
@@ -22,12 +23,14 @@ public class Onnpu_scr : MonoBehaviour {
 		if (obj.CompareTag ("Player")) {
 			if (Input.GetKeyDown ("space")) {
 				DestroyObj ();
+				sound01.PlayOneShot(sound01.clip);
 			} 
 		}
 	}
 
 
 	void DestroyObj(){
+		
 		Destroy (gameObject);
 		GameObject textmanager = GameObject.Find ("TextManager");
 		textmanager.GetComponent<TextManager_scr> ().PulusPoint ();
