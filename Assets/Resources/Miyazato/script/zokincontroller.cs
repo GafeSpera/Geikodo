@@ -62,7 +62,7 @@ public class zokincontroller : MonoBehaviour {
 		if(yasuricount<20){
 			//  雑巾が左にあるとき右を押すと移動する
 			if (isright == 0) {
-				if (Input.GetKey (KeyCode.RightArrow)) {
+				if (Input.GetKeyDown (KeyCode.RightArrow)) {
 					yasuricount++;
 					IsRight ();
 					pos.x += 5;
@@ -71,7 +71,7 @@ public class zokincontroller : MonoBehaviour {
 				}
 				//  雑巾が右にあるとき左を押すと移動する
 			} else if (isright == 1) {
-				if (Input.GetKey(KeyCode.LeftArrow)) {
+				if (Input.GetKeyDown(KeyCode.LeftArrow)) {
 					yasuricount++;
 					IsLeft ();
 					pos.x -= 5;

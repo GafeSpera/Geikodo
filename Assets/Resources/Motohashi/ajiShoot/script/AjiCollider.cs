@@ -8,7 +8,7 @@ public class AjiCollider : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GeikodoManager.isSuccess = false;
+		GeikodoManager.isSuccess = true;
 	}
 	
 	// Update is called once per frame
@@ -17,10 +17,6 @@ public class AjiCollider : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D Collision){
-//		if (Collision.gameObject.tag == "aji") {
-//			GeikodoManager.isSuccess = false;
-//			Debug.Log ("ダメです");
-//		}
 		GeikodoManager.isSuccess = false;
 		Debug.Log ("ダメです");
 	}
