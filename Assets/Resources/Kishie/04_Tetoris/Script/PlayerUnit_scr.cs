@@ -33,6 +33,7 @@ public class PlayerUnit_scr : MonoBehaviour {
 				Invoke ("Delete",0.20f);
 				Invoke ("Active",0.25f);
 				Invoke ("Destroy",0.35f);
+				unit = false;
 			}
 		}
 	}
