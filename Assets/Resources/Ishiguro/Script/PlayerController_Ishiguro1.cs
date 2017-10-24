@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController_Ishiguro1 : MonoBehaviour {
 
 	private Rigidbody2D rg2d;
-	private float speed = 0.2f;
+	private float speed = 0.3f;
 	public GameObject load;
 
 	// Use this for initialization
@@ -17,7 +17,7 @@ public class PlayerController_Ishiguro1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Time.fixedDeltaTime = 0.007f;
+		Time.fixedDeltaTime = 0.005f;
 		Move();
 	}
 
