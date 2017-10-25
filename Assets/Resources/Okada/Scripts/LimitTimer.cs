@@ -10,7 +10,6 @@ public class LimitTimer : MonoBehaviour {
 
 	public GameObject Obj;
 	public GameObject StartMassageObj;
-	Text StartMassageText;
 	public GameObject Failed;
 	public GameObject Success;
 
@@ -18,10 +17,11 @@ public class LimitTimer : MonoBehaviour {
 	private float interval = 1.0f;
 
 	void Start () {
-		Obj.SetActive (true);
-		startTime = Time.time;
+		Text StartMassageText;
 		StartMassageText = StartMassageObj.GetComponent<Text> ();
 		StartMassageText.text = startMassage;
+		Obj.SetActive (true);
+		startTime = Time.time;
 		Invoke ("LoadMiddleScene", 5.0f);
 
 		Success.SetActive (GeikodoManager.isSuccess);
