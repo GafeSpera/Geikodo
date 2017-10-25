@@ -6,16 +6,12 @@ using UnityEngine.SceneManagement;
 public class LimitTimer : MonoBehaviour {
 
 	public GameObject Failed;
-
+	public GameObject Success;
 	void Start () {
 		Invoke ("LoadMiddleScene", 5.0f);
 
-		if (GeikodoManager.isSuccess) {
-			Failed.SetActive (false);
-		}
-		else {
-			Failed.SetActive (true);
-		}
+		Success.SetActive (GeikodoManager.isSuccess);
+		Failed.SetActive (!GeikodoManager.isSuccess);
 	}
 	
 	// Update is called once per frame
