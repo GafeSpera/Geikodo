@@ -12,6 +12,7 @@ public class TitleCanvas : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		nextTime = Time.time;
+		GeikodoManager.score = 9;
 	}
 	
 	// Update is called once per frame
