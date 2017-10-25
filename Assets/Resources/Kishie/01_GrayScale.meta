@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 56a07a4b8c0df4d93833961fb6b06444
+=======
 guid: 2671fe1e9eb62479cba1b264fa822542
+>>>>>>> Motohashi
 folderAsset: yes
-timeCreated: 1507087933
+timeCreated: 1508862896
 licenseType: Free
 DefaultImporter:
   userData: 

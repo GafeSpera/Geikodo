@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/Ishiguro/Prefab.meta
+guid: 8cdc2056a7e1245538e4a9123b211744
+folderAsset: yes
+timeCreated: 1508862896
+=======
 guid: a9af5ba9d8754457bab620a540e4b606
 folderAsset: yes
 timeCreated: 1508841383
+>>>>>>> Motohashi:Assets/Resources/Ishiguro/Prefab.meta
 licenseType: Free
 DefaultImporter:
   userData: 
