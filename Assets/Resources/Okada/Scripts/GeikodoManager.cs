@@ -10,10 +10,16 @@ public class GeikodoManager : MonoBehaviour {
     public static int currentSceneNumber = 1;
     float loadNextSceneSec = 2.75f;
 
+	public GameObject Failed;
+	public GameObject Success;
+
 	void Start () {
         StartCoroutine(LoadNextScene());
-        if (isSuccess) {
-            //do nothing
+
+		Success.SetActive (isSuccess);
+		Failed.SetActive (!isSuccess);
+		if (isSuccess) {
+			//do nothing
         }
         else {
             score--;
@@ -24,6 +30,6 @@ public class GeikodoManager : MonoBehaviour {
 
     private IEnumerator LoadNextScene() {
         yield return new WaitForSeconds(loadNextSceneSec);
-        SceneManager.LoadScene(currentSceneNumber++);
+        SceneManager.LoadScene(++currentSceneNumber);
     }
 }
