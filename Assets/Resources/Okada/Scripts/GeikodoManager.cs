@@ -11,14 +11,17 @@ public class GeikodoManager : MonoBehaviour {
     float loadNextSceneSec = 2.75f;
 
 	public GameObject Failed;
+	public GameObject Success;
 
 	void Start () {
         StartCoroutine(LoadNextScene());
+
+		Success.SetActive (isSuccess);
+		Failed.SetActive (!isSuccess);
 		if (isSuccess) {
-			Failed.SetActive (false);
+			//do nothing
         }
         else {
-			Failed.SetActive (true);
             score--;
         }
         
