@@ -8,7 +8,7 @@ public class player_scr: MonoBehaviour {
 	bool move = true;
 
 	void Start () {
-		//GeikodoManager.isSuccess = false;
+		GeikodoManager.isSuccess = true;
 	}
 		
 	void Update () {
@@ -20,7 +20,7 @@ public class player_scr: MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D collision){
 		if(collision.CompareTag("Fish")){
-			Invoke ("Death",1f);
+			Death ();
 			move = false;
 		}
 		if (collision.CompareTag ("Goal")) {
@@ -44,5 +44,6 @@ public class player_scr: MonoBehaviour {
 	public void Death (){
 		Debug.Log ("GameOver");
 		//Destroy (gameObject);
+		GeikodoManager.isSuccess = false;
 	}
 }

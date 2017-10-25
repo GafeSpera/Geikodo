@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 public class TextManager_scr : MonoBehaviour {
 
-	public GameObject GameStart;
+
 	public GameObject GameCleare;
 	public GameObject GameOver;
 	float t = 0f;
@@ -13,25 +13,18 @@ public class TextManager_scr : MonoBehaviour {
 	bool result = false;
 
 	void Start () {
-		GeikodoManager.isSuccess = false;
+		GeikodoManager.isSuccess = true;
 	}
 
 
 	void Update () {
-		GamsStart ();
+		
 		if (result) {
 			Result ();
 		}
 
 	}
-
-
-	void GamsStart(){
-		t++;
-		if(t>=60f){
-			GameStart.SetActive (false);
-		}
-	}
+		
 
 
 	public void PulusPoint(){
@@ -44,7 +37,7 @@ public class TextManager_scr : MonoBehaviour {
 			GameCleare.SetActive (true);
 			GeikodoManager.isSuccess = true;
 		}else{
-			//GameOver.SetActive (true);
+			GeikodoManager.isSuccess = false;
 		}
 	}
 }
