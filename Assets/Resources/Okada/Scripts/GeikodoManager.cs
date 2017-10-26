@@ -29,6 +29,9 @@ public class GeikodoManager : MonoBehaviour {
         }
         else {
             score--;
+			if (score < 0) {
+				score = 0;
+			}
         }
 		for (int i = 0; i < 5; i++) {
 			grades [i].SetActive (i==score/2);
