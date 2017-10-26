@@ -9,7 +9,11 @@ public class ResultController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<Image> ().sprite = grades [GeikodoManager.score/2];
+		int i = GeikodoManager.score / 2;
+		if (i == 1) {
+			GetComponent<RectTransform> ().sizeDelta += new Vector2 (50.0f, 0);
+		}
+		GetComponent<Image> ().sprite = grades [i];
 	}
 	
 	// Update is called once per frame
