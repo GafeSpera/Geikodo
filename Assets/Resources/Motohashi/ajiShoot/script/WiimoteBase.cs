@@ -33,6 +33,7 @@ public class WiimoteBase : MonoBehaviour {
       
         if(Input.GetKey(KeyCode.A)){
             WiimoteManager.FindWiimotes();
+			Debug.Log ("Conected");
         }
 
         if(Input.GetKey(KeyCode.S)){
