@@ -18,7 +18,7 @@ public class ajiMove : MonoBehaviour {
 	void Update () {
 		for (int i = 0; i < Aji.Length; i++) {
 			Aji [i].transform.position = AjiPos [i];
-			AjiPos [i].x -= 0.6f;
+			AjiPos [i].x -= 0.3f;
 		}
 	}
 }
