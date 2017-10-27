@@ -8,7 +8,7 @@ public class TextManager_scr : MonoBehaviour {
 	public GameObject GameCleare;
 	public GameObject GameOver;
 	float t = 0f;
-	float num_of_onnpu = 5f;
+	float num_of_onnpu = 6f;
 	float Point;
 	bool result = false;
 

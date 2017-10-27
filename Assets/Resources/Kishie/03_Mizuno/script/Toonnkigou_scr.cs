@@ -6,11 +6,14 @@ using UnityEngine.UI;
 public class  Toonnkigou_scr : MonoBehaviour {
 	
 	public GameObject Red;
+	private AudioSource sound01;
 	public float SpeedX;
 	float X;
 	float Y;
 
 	void Start () {
+		AudioSource[] audioSources = GetComponents<AudioSource>();
+		sound01 = audioSources[0];
 		X = this.transform.position.y;
 		Y = this.transform.position.y;
 	}
@@ -20,6 +23,7 @@ public class  Toonnkigou_scr : MonoBehaviour {
 		Move ();
 		if (Input.GetKeyDown ("space")) {
 			Red.SetActive (true);
+			sound01.PlayOneShot(sound01.clip);
 		} else {
 			Red.SetActive (false);
 		}

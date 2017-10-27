@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class player_scr: MonoBehaviour {
 	public Vector2 SPEED = new Vector2(0.1f, 0.2f);
 	bool move = true;
+	AudioSource audioSource;
+	public List<AudioClip> audioClip = new List<AudioClip>();
+	public GameObject miss;
 
 	void Start () {
+		audioSource = GetComponent<AudioSource> ();
 		GeikodoManager.isSuccess = true;
 	}
 		
@@ -24,7 +28,7 @@ public class player_scr: MonoBehaviour {
 			move = false;
 		}
 		if (collision.CompareTag ("Goal")) {
-			
+			audioSource.PlayOneShot (audioClip[1]);
 		}
 	}
 			
@@ -42,8 +46,10 @@ public class player_scr: MonoBehaviour {
 
 
 	public void Death (){
-		Debug.Log ("GameOver");
+		//Debug.Log ("GameOver");
 		//Destroy (gameObject);
 		GeikodoManager.isSuccess = false;
+		audioSource.PlayOneShot (audioClip[0]);
+		miss.SetActive(true);
 	}
 }
