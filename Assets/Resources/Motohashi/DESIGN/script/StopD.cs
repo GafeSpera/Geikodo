@@ -13,7 +13,7 @@ public class StopD : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.A)) {
+		if (Input.GetKey (KeyCode.A) || Input.GetKeyDown(KeyCode.JoystickButton13)) {
 			RollingD.Roll = 0;
 			Stoped = true;
 		}
