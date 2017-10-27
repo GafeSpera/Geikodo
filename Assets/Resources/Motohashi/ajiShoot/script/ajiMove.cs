@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ajiMove : MonoBehaviour {
 
-	public GameObject[] Aji = new GameObject[3];
-	private Vector3[] AjiPos = new Vector3[3];
+	public GameObject[] Aji = new GameObject[2];
+	private Vector3[] AjiPos = new Vector3[2];
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +18,7 @@ public class ajiMove : MonoBehaviour {
 	void Update () {
 		for (int i = 0; i < Aji.Length; i++) {
 			Aji [i].transform.position = AjiPos [i];
-			AjiPos [i].x -= 0.3f;
+			AjiPos [i].x -= 0.15f;
 		}
 	}
 }

@@ -16,16 +16,16 @@ public class tanniMove : MonoBehaviour
 	void Update ()
 	{
 		tanni.transform.position = tanniPos;
-		if (Input.GetKey (KeyCode.UpArrow)) {
+		if (Input.GetKey(KeyCode.JoystickButton4)) {
 			tanniPos.y += 0.2f;
 		}
-		if (Input.GetKey (KeyCode.DownArrow)) {
+		if (Input.GetKey(KeyCode.JoystickButton6)) {
 			tanniPos.y -= 0.2f;
 		}
-		if (Input.GetKey (KeyCode.RightArrow)) {
+		if (Input.GetKey(KeyCode.JoystickButton5)) {
 			tanniPos.x += 0.2f;
 		}
-		if (Input.GetKey (KeyCode.LeftArrow)) {
+		if (Input.GetKey(KeyCode.JoystickButton7)) {
 			tanniPos.x -= 0.2f;
 		}
 		

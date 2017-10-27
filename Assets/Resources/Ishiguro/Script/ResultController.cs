@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ResultController : MonoBehaviour {
 
 	public Sprite[] grades = new Sprite[5];
+	private float time = 0;
+	public string TitleScene = "Title";
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +21,9 @@ public class ResultController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		time += Time.deltaTime;
+		if (time >= 5.0f) {
+			SceneManager.LoadScene (TitleScene);
+		}
 	}
 }
