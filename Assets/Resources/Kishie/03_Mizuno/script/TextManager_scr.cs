@@ -13,7 +13,7 @@ public class TextManager_scr : MonoBehaviour {
 	bool result = false;
 
 	void Start () {
-		GeikodoManager.isSuccess = true;
+		GeikodoManager.isSuccess = false;
 	}
 
 
