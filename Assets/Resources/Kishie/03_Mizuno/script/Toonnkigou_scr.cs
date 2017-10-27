@@ -21,7 +21,7 @@ public class  Toonnkigou_scr : MonoBehaviour {
 
 	void Update () {
 		Move ();
-		if (Input.GetKeyDown ("space")) {
+		if (Input.GetKeyDown (KeyCode.JoystickButton13)) {
 			Red.SetActive (true);
 			sound01.PlayOneShot(sound01.clip);
 		} else {

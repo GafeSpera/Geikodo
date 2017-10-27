@@ -21,7 +21,7 @@ public class Onnpu_scr : MonoBehaviour {
 	public void OnTriggerStay2D(Collider2D obj){
 
 		if (obj.CompareTag ("Player")) {
-			if (Input.GetKeyDown ("space")) {
+			if (Input.GetKeyDown (KeyCode.JoystickButton13)) {
 				DestroyObj ();
 				sound01.PlayOneShot(sound01.clip);
 			} 
