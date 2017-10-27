@@ -23,7 +23,7 @@ public class TitleCanvas : MonoBehaviour {
 			nextTime += interval;
 		}
 
-		if (Input.GetKeyDown (KeyCode.L)) {
+		if (Input.GetKeyDown (KeyCode.L) || Input.GetKeyDown(KeyCode.JoystickButton13)) {
 			SceneManager.LoadScene ("Main");
 		}
 	}
