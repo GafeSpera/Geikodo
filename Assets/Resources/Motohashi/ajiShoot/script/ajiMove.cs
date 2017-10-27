@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ajiMove : MonoBehaviour {
 
-	public GameObject[] Aji = new GameObject[3];
-	private Vector3[] AjiPos = new Vector3[3];
+	public GameObject[] Aji = new GameObject[2];
+	private Vector3[] AjiPos = new Vector3[2];
 
 	// Use this for initialization
 	void Start () {
