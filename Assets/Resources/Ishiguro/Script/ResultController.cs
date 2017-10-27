@@ -10,7 +10,7 @@ public class ResultController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		int i = GeikodoManager.score / 2;
-		if (i == 1) {
+		if (i == 0) {
 			GetComponent<RectTransform> ().sizeDelta += new Vector2 (50.0f, 0);
 		}
 		GetComponent<Image> ().sprite = grades [i];
