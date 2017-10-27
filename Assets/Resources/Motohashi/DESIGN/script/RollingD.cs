@@ -9,7 +9,7 @@ public class RollingD : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Roll = 15;
+		Roll = 5;
 	}
 	
 	// Update is called once per frame
