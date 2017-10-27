@@ -31,7 +31,7 @@ public class timingdecision : MonoBehaviour {
 		time += Time.deltaTime;
 		Artistcontroller a1 = GetComponent<Artistcontroller> ();
 		MizunoADController m1 = GetComponent<MizunoADController> ();
-		if(time<=2 && Input.GetKeyDown(KeyCode.Space)){
+		if(time<=2 && Input.GetKeyDown(KeyCode.JoystickButton13)){
 			Isbadclapping = true;
 			a1.OverChange ();
 			m1.GameOverSE ();
@@ -49,7 +49,7 @@ public class timingdecision : MonoBehaviour {
 			//プレイヤーがボタンを押すまでの時間を計測
 			decisiontime += Time.deltaTime;
 			//1秒以内に押せば続く。押さなければゲームオーバー
-			if (decisiontime <= 2 && Input.GetKeyDown(KeyCode.Space)) {
+			if (decisiontime <= 2 && Input.GetKeyDown(KeyCode.JoystickButton13)) {
 				a1.PlayerChange ();
 				Isclapping3 = true;
 				m1.Clap ();
