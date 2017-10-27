@@ -16,11 +16,15 @@ public class Glay_scr : MonoBehaviour {
 	public float Level = 1f;
 	private float defaultCameraScale =  2.929865f;
 
+	AudioSource audioSource;
+	public List<AudioClip> audioClip = new List<AudioClip>();
+
 	void Start () {
 		GeikodoManager.isSuccess = false;
 		came = GameObject.Find ("Main Camera");
 		cs = came.GetComponent<Camera> ();
 		cs.orthographicSize = defaultCameraScale;
+		audioSource = GetComponent<AudioSource> ();
 	}
 
 
@@ -63,11 +67,13 @@ public class Glay_scr : MonoBehaviour {
 	public void DisplayRezult(){
 		if (x == -1) {
 			//Debug.Log ("ok");
-			GameClear.SetActive (true);//拡大されてから表示したい
+			GameClear.SetActive (true);
+			audioSource.PlayOneShot (audioClip[0]);
 			GeikodoManager.isSuccess = true;
 		} else {
 			//Debug.Log ("再提出");
 			GameOver.SetActive (true);
+			audioSource.PlayOneShot (audioClip[1]);
 		}
 	}
 }
