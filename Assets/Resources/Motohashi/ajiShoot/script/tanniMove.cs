@@ -16,16 +16,16 @@ public class tanniMove : MonoBehaviour
 	void Update ()
 	{
 		tanni.transform.position = tanniPos;
-		if (Input.GetKey (KeyCode.UpArrow)) {
+		if (WiimoteBase.wiimote.Button.d_right) {
 			tanniPos.y += 0.2f;
 		}
-		if (Input.GetKey (KeyCode.DownArrow)) {
+		if (WiimoteBase.wiimote.Button.d_left) {
 			tanniPos.y -= 0.2f;
 		}
-		if (Input.GetKey (KeyCode.RightArrow)) {
+		if (WiimoteBase.wiimote.Button.d_down) {
 			tanniPos.x += 0.2f;
 		}
-		if (Input.GetKey (KeyCode.LeftArrow)) {
+		if (WiimoteBase.wiimote.Button.d_up) {
 			tanniPos.x -= 0.2f;
 		}
 		
