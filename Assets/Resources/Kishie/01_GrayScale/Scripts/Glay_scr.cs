@@ -33,7 +33,7 @@ public class Glay_scr : MonoBehaviour {
 		if (this.transform.position.x >= 7) {
 			x = -7;
 		}
-		if (Input.GetKeyDown ("space")) {
+		if (Input.GetKeyDown (KeyCode.JoystickButton13)){
 			Stop();
 		}
 		if(zoom){

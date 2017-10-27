@@ -36,9 +36,9 @@ public class player_scr: MonoBehaviour {
 	public void Move(){
 		Vector2 Position = transform.position;
 		Position.y -= SPEED.y;
-		if(Input.GetKey("left")){
+		if(Input.GetKey (KeyCode.JoystickButton7)){
 			Position.x -= SPEED.x;
-		} else if(Input.GetKey("right")){
+		} else if(Input.GetKey (KeyCode.JoystickButton5)){
 			Position.x += SPEED.x;
 		}
 		transform.position = Position;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerUnit_scr : MonoBehaviour {
+	
 
 	public GameObject units;
 	public	GameObject manager;
@@ -48,18 +49,15 @@ public class PlayerUnit_scr : MonoBehaviour {
 		if (collision.CompareTag ("Goal")) {
 			unit = true;
 		}
-//		if (collision.CompareTag ("wall")) {
-//			
-//		}
 	}
 
 
 	public void Move(){
 		Y -= Speed;
-		if(Input.GetKeyDown ("right")){
+		if(Input.GetKeyDown (KeyCode.JoystickButton5)){
 			X += width;
 		}
-		if(Input.GetKeyDown ("left")){
+		if(Input.GetKeyDown (KeyCode.JoystickButton7)){
 			X -= width;
 		}
 		this.transform.position = new Vector2 (X,Y);
@@ -69,6 +67,7 @@ public class PlayerUnit_scr : MonoBehaviour {
 	void Delete(){
 		units.SetActive (false);
 		gameObject.SetActive (false);
+
 	}
 
 
@@ -82,5 +81,6 @@ public class PlayerUnit_scr : MonoBehaviour {
 		Destroy (units);
 		Destroy (gameObject);
 		manager.GetComponent<TetorisuManager_scr> ().OK();
+
 	}
 }
